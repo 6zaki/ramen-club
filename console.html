@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<title>スワローラーメン部</title>
+</head>
+<body>
+	<script>
+		$(function () {
+			var ajax = new XMLHttpRequest();
+			ajax.open("get", "https://api.gnavi.co.jp/RestSearchAPI/v3/?keyid=63b545ef16c4d91065ba0e4237f48310&latitude=36.063924&longitude=140.125578&range=3");
+			ajax.responseType = 'json';
+			ajax.send();
+			ajax.onload = function(e) {
+				console.log(e.target.response);
+			};
+		})
+	</script>
+</body>
+</html>
