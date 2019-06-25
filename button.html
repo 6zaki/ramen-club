@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>ぐるなびAPIテスト</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+  <button type="button" id="submit">取得</button>
+
+  <script>
+
+		$(function () {
+			var ajax = new XMLHttpRequest();
+			ajax.open("get", "https://api.gnavi.co.jp/RestSearchAPI/v3/?keyid=63b545ef16c4d91065ba0e4237f48310&latitude=36.063924&longitude=140.125578&range=5");
+			ajax.responseType = 'json';
+			ajax.send();
+			ajax.onload = function(e) {
+				$('#submit').on('click', function(){
+					for(var i = 0; i < 5; i++) {
+						console.log(e.target.response.rest[i].name);
+					}
+				})
+			}
+		})
+  </script>
+</body>
+</html>
