@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>ぐるなびAPIテスト</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+  <button type="button" id="submit">取得</button>
+
+  <script>
+
+		$(function () {
+			var ajax = new XMLHttpRequest();
+			ajax.open("get", "https://api.gnavi.co.jp/RestSearchAPI/v3/?keyid=63b545ef16c4d91065ba0e4237f48310&areacode_m=AREAM2822&category_s=RSFST08008");
+			ajax.responseType = 'json';
+			ajax.send();
+			ajax.onload = function(e) {
+				$('#submit').on('click', function(){
+					for(var i = 0; i < 10; i++) {
+						const name = e.target.response.rest[i].name;
+						const ad = e.target.response.rest[i].address;
+						const result = '店名：' + name + '\n所在地：' + ad;
+						console.log(result);
+					}
+				})
+			}
+		})
+  </script>
+</body>
+</html>
