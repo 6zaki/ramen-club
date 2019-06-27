@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <style>
+  table {
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+  }
+  table tr th,
+  table tr td {
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    padding: 5px 10px;
+  }
+
+  </style>
+
+  <title>近所のラーメン屋リスト</title>
+</head>
+<body>
+  <table id="table" border="0" cellspacing="0">
+    <tr>
+      <th>店舗名</th>
+      <th>所在地</th>
+    </tr>
+  </table>
+
+  <script>
+    function showResult(result) {
+      //rest（取得内容）分ループする
+      for(var i in result.rest) {
+        $('#table').append('<tr><td>' + result.rest[i].name + '</td><td>' + result.rest[i].address + '</td></tr>')
+      }
+    }
+
+    $(function() {
+      var url = 'https://api.gnavi.co.jp/RestSearchAPI/v3/?keyid=63b545ef16c4d91065ba0e4237f48310&areacode_m=AREAM2822&category_s=RSFST08008'
+      $.getJSON(url, function(result) {
+        showResult(result)
+      })
+    })
+  </script>
+</body>
+</html>
