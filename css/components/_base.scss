@@ -1,0 +1,52 @@
+// main: ../style.scss
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+	line-height: 1.45;
+	color: $black;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	font-size: 1.3rem;
+	background: #f7f6ed;
+}
+
+.wrapper {
+	width: 95%;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+ul {
+	li {
+		list-style: none;
+	}
+}
+
+p {
+	margin-bottom: 1rem;
+	line-height: 1.4;
+}
+
+a {
+	text-decoration: none;
+
+	color: $aqua;
+
+	&:hover {
+		-webkit-transition: all .2s;
+		        transition: all .2s;
+		text-decoration: underline;
+
+		color: lighten($aqua, 20%);
+	}
+}
+

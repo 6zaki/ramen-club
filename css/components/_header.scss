@@ -1,0 +1,117 @@
+// main: ../style.scss
+
+header {
+	background: #b11b1b;
+	padding: 10px 20px;
+	margin-bottom: 20px;
+
+	a {
+		text-decoration: none;
+		color: #fff;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	.title {
+		font-size: 2rem;
+		font-weight: bold;
+		color: #fff;
+		line-height: 69px;
+	}
+
+	#searchbtn {
+		font-size: 1.4rem;
+		outline: none;
+		margin: 17px 0 0;
+	}
+
+	.weather-box {
+		p {
+			color: #fff;
+			font-weight: bold;
+			font-size: 1.4rem;
+			margin-bottom: 0;
+		}
+
+		.weather-detail {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-align: baseline;
+			    -ms-flex-align: baseline;
+			        align-items: baseline;
+			color: #fff;
+			font-size: 1.4rem;
+			font-weight: bold;
+		}
+	}
+}
+
+#acordion {
+	background: #b11b1b;
+	position: absolute;
+	top: 94px;
+	height: auto;
+	color: #fff;
+	padding: 10px 20px;
+	border-top: 1px solid lighten(#b11b1b, 30%);
+
+	> .category-box {
+		margin: 10px 0;
+
+		p {
+			font-size: 1.6rem;
+			font-weight: bold;
+		}
+
+		.category-list {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-ms-flex-wrap: wrap;
+			    flex-wrap: wrap;
+			min-height: 50px;
+
+			label {
+				font-size: 1.4rem!important;
+				color: #fff!important;
+				margin-right: 10px;
+			}
+		}
+
+		button {
+			height: 40px;
+			font-size: 1.4rem;
+		}
+	}
+
+	> .search-box {
+		margin: 10px 0;
+
+		p {
+			font-size: 1.6rem;
+			font-weight: bold;
+		}
+
+		input {
+			height: 40px;
+			font-size: 1.4rem;
+			width: 100%;
+			max-width: 500px
+		}
+
+		button {
+			height: 40px;
+			font-size: 1.4rem;
+		}
+	}
+}
+
+@media screen and (max-width:639px) {
+	#acordion {
+		position: absolute;
+		top: 163px;
+	}
+}

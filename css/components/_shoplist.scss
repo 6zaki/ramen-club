@@ -1,0 +1,68 @@
+// main: ../style.scss
+
+#totalShop {
+	margin-bottom: 2rem;
+
+	p {
+		text-align: right;
+	}
+}
+
+.shoplist-box {
+	border-radius: 5px;
+	background: #fff;
+	-webkit-box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.1);
+	        box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.1);
+	-webkit-transition: all .2s;
+	transition: all .2s;
+
+	&:hover {
+		background: #f1a7a7;
+	}
+
+	&.resultnone {
+		background: none;
+		border-radius: none;
+		-webkit-transition: none;
+		transition: none;
+    -webkit-box-shadow: 0px 0px 0px 0px;
+            box-shadow: 0px 0px 0px 0px;
+		margin: 100px auto 0;
+	}
+
+	> .boxlink {
+		color: $black;
+		display: block;
+		width: 100%;
+		height: 100%;
+
+		&:hover {
+			text-decoration: none;
+
+		}
+
+		> p {
+			margin-bottom: 0.2rem;
+		}
+
+		> .shopname {
+			font-size: 1.4rem;
+			font-weight: bold;
+			margin-bottom: 1rem;
+		}
+
+		> .open {
+			> .small {
+				font-size: 1rem;
+				color: #666;
+			}
+		}
+
+		> .holiday {
+			> .small {
+				font-size: 1rem;
+				color: #666;
+			}
+		}
+	}
+}
